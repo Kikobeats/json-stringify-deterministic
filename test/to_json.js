@@ -8,12 +8,12 @@ describe('toJSON', function () {
     stringify(obj).should.be.equal('{"one":1}')
   })
 
-  it('returns string', function () {
+  it('string', function () {
     var obj = { one: 1, two: 2, toJSON: function () { return 'one'; } }
     stringify(obj).should.be.equal('"one"')
   })
 
-  it('returns array', function () {
+  it('array', function () {
     var obj = { one: 1, two: 2, toJSON: function () { return ['one']; } }
     stringify(obj).should.be.equal('["one"]')
   })

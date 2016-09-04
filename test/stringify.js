@@ -8,28 +8,39 @@ describe('stringify', function () {
     stringify(obj).should.be.equal('{"a":3,"b":[4,5],"c":6,"z":null}')
   })
 
-  it('object with undefined', function () {
-    var obj = { a: 3, z: undefined }
-    stringify(obj).should.be.equal('{"a":3}')
+  describe('undefined', function () {
+    it('in object', function () {
+      var obj = { a: 3, z: undefined }
+      stringify(obj).should.be.equal('{"a":3}')
+    })
+
+    it('in array', function () {
+      var obj = [4, undefined, 6]
+      stringify(obj).should.be.equal('[4,null,6]')
+    })
   })
 
-  it('object with regex', function () {
-    var obj = { a: 3, z: new RegExp('foobar') }
-    stringify(obj).should.be.equal('{"a":3,"z":"/foobar/"}')
+  describe('empty string', function () {
+    it('in object', function () {
+      var obj = { a: 3, z: '' }
+      stringify(obj).should.be.equal('{"a":3,"z":""}')
+    })
+
+    it('in array', function () {
+      var obj = [4, '', 6]
+      stringify(obj).should.be.equal('[4,"",6]')
+    })
   })
 
-  it('array with undefined', function () {
-    var obj = [4, undefined, 6]
-    stringify(obj).should.be.equal('[4,null,6]')
-  })
+  describe('regex', function () {
+    it('in object', function () {
+      var obj = { a: 3, z: new RegExp('foobar') }
+      stringify(obj).should.be.equal('{"a":3,"z":"/foobar/"}')
+    })
 
-  it('object with empty string', function () {
-    var obj = { a: 3, z: '' }
-    stringify(obj).should.be.equal('{"a":3,"z":""}')
-  })
-
-  it('array with empty string', function () {
-    var obj = [4, '', 6]
-    stringify(obj).should.be.equal('[4,"",6]')
+    it('in array', function () {
+      var obj = [4, undefined, new RegExp('foobar')]
+      stringify(obj).should.be.equal('[4,null,"/foobar/"]')
+    })
   })
 })
