@@ -2,7 +2,7 @@
 
 var stringify = require('..')
 
-describe('str', function () {
+describe('stringify', function () {
   it('simple object', function () {
     var obj = { c: 6, b: [4, 5], a: 3, z: null }
     stringify(obj).should.be.equal('{"a":3,"b":[4,5],"c":6,"z":null}')
@@ -11,6 +11,11 @@ describe('str', function () {
   it('object with undefined', function () {
     var obj = { a: 3, z: undefined }
     stringify(obj).should.be.equal('{"a":3}')
+  })
+
+  it('object with regex', function () {
+    var obj = { a: 3, z: new RegExp('foobar') }
+    stringify(obj).should.be.equal('{"a":3,"z":"/foobar/"}')
   })
 
   it('array with undefined', function () {
