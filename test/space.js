@@ -23,16 +23,6 @@ describe('space', function () {
     )
   })
 
-  it('space parameter (with a number)', function () {
-    var obj = { one: 1, two: 2 }
-    stringify(obj, {space: 3}).should.be.equal(''
-      + '{\n'
-      + '   "one": 1,\n'
-      + '   "two": 2\n'
-      + '}'
-    )
-  })
-
   it('space parameter (nested objects)', function () {
     var obj = { one: 1, two: { b: 4, a: [2, 3] } }
     stringify(obj, {space: '  '}).should.be.equal(''
