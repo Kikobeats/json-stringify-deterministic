@@ -23,7 +23,7 @@ describe('nested', function () {
     var one = { a: 1 }
     var two = { a: 2, one: one }
     one.two = two
-    stringify(one, {cycles: true}).should.be.equal('{"a":1,"two":{"a":2,"one":"__cycle__"}}')
+    stringify(one, {cycles: true}).should.be.equal('{"a":1,"two":{"a":2,"one":"[Circular]"}}')
   })
 
   it('repeated non-cyclic value', function () {
