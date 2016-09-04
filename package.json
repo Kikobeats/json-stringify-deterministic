@@ -1,0 +1,47 @@
+{
+  "name": "json-stringify-deterministic",
+  "description": "deterministic version of JSON.stringify() so you can get a consistent hash from stringified results.",
+  "homepage": "https://github.com/Kikobeats/json-stringify-deterministic",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Kiko Beats",
+    "email": "josefrancisco.verdu@gmail.com",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikobeats/json-stringify-deterministic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kikobeats/json-stringify-deterministic/issues"
+  },
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "latest",
+    "coveralls": "latest",
+    "git-dirty": "latest",
+    "mocha": "latest",
+    "nyc": "latest",
+    "should": "latest",
+    "standard": "latest"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "nyc mocha"
+  },
+  "license": "MIT",
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
+  }
+}
