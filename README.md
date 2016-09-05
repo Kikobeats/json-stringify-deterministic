@@ -43,13 +43,29 @@ The input `object` to be serialized.
 
 #### opts
 
+##### opts.stringify
+
+Type: `function`
+Default: `JSON.stringify`
+
+Determinate how to stringify primitives values.
+
+##### opts.cycles
+
+Type: `boolean`
+Default: `false`
+
+Determinate how to resolve cycles.
+
+Under `false`, when a cycle is detected, `[Circular]` will be inserted in the node.
+
 ##### opts.compare
 
 Type: `function`
 
-If `opts` is given, you can supply an `opts.compare` to have a custom comparison
-function for object keys. Your function `opts.compare` is called with these
-parameters:
+Custom comparison function for object keys.
+
+Your function `opts.compare` is called with these parameters:
 
 ``` js
 opts.cmp({ key: akey, value: avalue }, { key: bkey, value: bvalue })
