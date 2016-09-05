@@ -1,11 +1,5 @@
 # json-stringify-deterministic
 
-<p align="center">
-  <br>
-  <img src="https://i.imgur.com/Mh13XWB.gif" alt="json-stringify-deterministic">
-  <br>
-</p>
-
 ![Last version](https://img.shields.io/github/tag/Kikobeats/json-stringify-deterministic.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/json-stringify-deterministic/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/json-stringify-deterministic)
 [![Coverage Status](https://img.shields.io/coveralls/Kikobeats/json-stringify-deterministic.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/json-stringify-deterministic)
@@ -14,9 +8,11 @@
 [![NPM Status](https://img.shields.io/npm/dm/json-stringify-deterministic.svg?style=flat-square)](https://www.npmjs.org/package/json-stringify-deterministic)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-**NOTE:** more badges availables in [shields.io](https://shields.io/)
+> Deterministic version of `JSON.stringify()`, so you can get a consistent hash from stringified results.
 
-> deterministic version of JSON.stringify() so you can get a consistent hash from stringified results.
+- No Dependencies. Minimal as possible.
+- Better cycles detection.
+- Support serialization for object without `.toJSON` (such as `RegExp`).
 
 ## Install
 
@@ -27,31 +23,101 @@ $ npm install json-stringify-deterministic --save
 ## Usage
 
 ```js
-const jsonStringifyDeterministic = require('json-stringify-deterministic')
+const stringify = require('json-stringify-deterministic')
+var obj = { c: 8, b: [{z: 6, y: 5, x: 4}, 7], a: 3 }
 
-jsonStringifyDeterministic('do something')
-//=> return something
+console.log(stringify(obj))
+// => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
 ```
 
 ## API
 
-### jsonStringifyDeterministic(input, [options])
+### stringify(&lt;obj&gt;, [opts])
 
-#### input
+#### obj
 
 *Required*<br>
-Type: `string`
+Type: `object`
 
-Lorem ipsum.
+The input `object` to be serialized.
 
-#### options
+#### opts
 
-##### foo
+##### opts.compare
 
-Type: `boolean`
-Default: `false`
+Type: `function`
 
-Lorem ipsum.
+If `opts` is given, you can supply an `opts.compare` to have a custom comparison
+function for object keys. Your function `opts.compare` is called with these
+parameters:
+
+``` js
+opts.cmp({ key: akey, value: avalue }, { key: bkey, value: bvalue })
+```
+
+For example, to sort on the object key names in reverse order you could write:
+
+``` js
+const stringify = require('json-stringify-deterministic')
+
+const obj = { c: 8, b: [{z: 6,y: 5,x: 4}, 7], a: 3 }
+const objSerializer = stringify(obj, function (a, b) {
+  return a.key < b.key ? 1 : -1
+})
+
+console.log(objSerializer)
+// => {"c":8,"b":[{"z":6,"y":5,"x":4},7],"a":3}
+```
+
+Or if you wanted to sort on the object values in reverse order, you could write:
+
+```js
+const stringify = require('json-stringify-deterministic')
+
+const obj = { d: 6, c: 5, b: [{z: 3, y: 2, x: 1}, 9], a: 10 }
+const objtSerializer = stringify(obj, function (a, b) {
+  return a.value < b.value ? 1 : -1
+})
+
+console.log(objtSerializer)
+// => {"d":6,"c":5,"b":[{"z":3,"y":2,"x":1},9],"a":10}
+```
+
+##### opts.space
+
+Type: `string`<br>
+Default: `''`
+
+If you specify `opts.space`, it will indent the output for pretty-printing.
+
+Valid values are strings (e.g. `{space: \t}`). For example:
+
+```js
+const stringify = require('json-stringify-deterministic')
+
+const obj = { b: 1, a: { foo: 'bar', and: [1, 2, 3] } }
+const objSerializer = stringify(obj, { space: '  ' })
+console.log(objSerializer)
+// => {
+//   "a": {
+//     "and": [
+//       1,
+//       2,
+//       3
+//     ],
+//     "foo": "bar"
+//   },
+//   "b": 1
+// }
+```
+
+##### opts.replacer
+
+Type: `function`<br>
+
+The replacer parameter is a function `opts.replacer(key, value)` that behaves
+the same as the replacer
+[from the core JSON object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_native_JSON#The_replacer_parameter).
 
 ## License
 
