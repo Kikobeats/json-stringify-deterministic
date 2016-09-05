@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "main": "lib",
   "author": {
-    "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
   "repository": {
@@ -16,24 +16,34 @@
   "bugs": {
     "url": "https://github.com/Kikobeats/json-stringify-deterministic/issues"
   },
-  "keywords": [],
-  "dependencies": {},
+  "keywords": [
+    "json",
+    "stringify",
+    "deterministic",
+    "hash",
+    "sort",
+    "stable"
+  ],
   "devDependencies": {
-    "coffee-script": "latest",
     "coveralls": "latest",
     "git-dirty": "latest",
     "mocha": "latest",
     "nyc": "latest",
     "should": "latest",
-    "standard": "latest"
+    "standard": "latest",
+    "standard-markdown": "latest"
   },
   "engines": {
     "node": ">= 0.10"
   },
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "clean": "rm -rf node_modules",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "standard",
+    "lint": "standard && standard-markdown",
     "pretest": "npm run lint",
     "test": "nyc mocha"
   },
