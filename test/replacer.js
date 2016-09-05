@@ -5,7 +5,7 @@ var stringify = require('..')
 describe('replacer', function () {
   it('replace root', function () {
     var obj = { a: 1, b: 2, c: false }
-    var replacer = function (key, value) { return 'one'; }
+    var replacer = function (key, value) { return 'one' }
 
     stringify(obj, { replacer: replacer }).should.be.equal('"one"')
   })
