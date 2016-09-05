@@ -10,6 +10,8 @@
 
 > Deterministic version of `JSON.stringify()`, so you can get a consistent hash from stringified results.
 
+Similar to [json-stable-stringify](https://github.com/substack/json-stable-stringify) *but*:
+
 - No Dependencies. Minimal as possible.
 - Better cycles detection.
 - Support serialization for object without `.toJSON` (such as `RegExp`).
