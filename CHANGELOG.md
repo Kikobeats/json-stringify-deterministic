@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2017-07-03)
+
+* Fix linter ([69774ca](https://github.com/kikobeats/json-stringify-deterministic/commit/69774ca))
+* Refactor ([6948c3a](https://github.com/kikobeats/json-stringify-deterministic/commit/6948c3a))
+* Update README.md ([77cd785](https://github.com/kikobeats/json-stringify-deterministic/commit/77cd785))
+* Update travis builds ([4c91c4c](https://github.com/kikobeats/json-stringify-deterministic/commit/4c91c4c))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-09-05)
 
