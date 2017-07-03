@@ -42,8 +42,6 @@ const obj = { c: 8, b: [{z: 6, y: 5, x: 4}, 7], a: 3 }
 
 console.log(stringify(sortKeysRecursive(obj)))
 // => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
-
-stringify (sortKeysRecursive(foo))
 ```
 
 ## API
