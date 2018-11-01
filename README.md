@@ -71,7 +71,7 @@ Default: `false`
 
 Determinate how to resolve cycles.
 
-Under `false`, when a cycle is detected, `[Circular]` will be inserted in the node.
+Under `true`, when a cycle is detected, `[Circular]` will be inserted in the node.
 
 ##### opts.compare
 
