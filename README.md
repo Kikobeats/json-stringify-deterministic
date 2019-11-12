@@ -29,7 +29,7 @@ const stringify = require('json-stringify-deterministic')
 const obj = { c: 8, b: [{z: 6, y: 5, x: 4}, 7], a: 3 }
 
 console.log(stringify(obj))
-// => {"c":8,"b":[{"y":5,"x":4,"z":6},7],"a":3}
+// => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
 ```
 
 **ProTip**: You can use it with [sort-keys-recursive](https://github.com/Kikobeats/sort-keys-recursive):
