@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 1.0.2 (2021-12-22)
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2017-07-03)
 
@@ -26,6 +32,3 @@
 * Update ([cb03ce6](https://github.com/kikobeats/json-stringify-deterministic/commit/cb03ce6))
 * WIP ([2be2848](https://github.com/kikobeats/json-stringify-deterministic/commit/2be2848))
 * WIP ([8c02d17](https://github.com/kikobeats/json-stringify-deterministic/commit/8c02d17))
-
-
-
