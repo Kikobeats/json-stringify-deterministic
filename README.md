@@ -1,12 +1,8 @@
 # json-stringify-deterministic
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/json-stringify-deterministic.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/Kikobeats/json-stringify-deterministic/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/json-stringify-deterministic)
 [![Coverage Status](https://img.shields.io/coveralls/Kikobeats/json-stringify-deterministic.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/json-stringify-deterministic)
-[![Dependency status](https://img.shields.io/david/Kikobeats/json-stringify-deterministic.svg?style=flat-square)](https://david-dm.org/Kikobeats/json-stringify-deterministic)
-[![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/json-stringify-deterministic.svg?style=flat-square)](https://david-dm.org/Kikobeats/json-stringify-deterministic#info=devDependencies)
 [![NPM Status](https://img.shields.io/npm/dm/json-stringify-deterministic.svg?style=flat-square)](https://www.npmjs.org/package/json-stringify-deterministic)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
 > Deterministic version of `JSON.stringify()`, so you can get a consistent hash from stringified results.
 
@@ -26,7 +22,7 @@ $ npm install json-stringify-deterministic --save
 
 ```js
 const stringify = require('json-stringify-deterministic')
-const obj = { c: 8, b: [{z: 6, y: 5, x: 4}, 7], a: 3 }
+const obj = { c: 8, b: [{ z: 6, y: 5, x: 4 }, 7], a: 3 }
 
 console.log(stringify(obj))
 // => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
@@ -38,7 +34,7 @@ console.log(stringify(obj))
 const stringify = require('json-stringify-deterministic')
 const sortKeysRecursive = require('sort-keys-recursive')
 
-const obj = { c: 8, b: [{z: 6, y: 5, x: 4}, 7], a: 3 }
+const obj = { c: 8, b: [{ z: 6, y: 5, x: 4 }, 7], a: 3 }
 
 console.log(stringify(sortKeysRecursive(obj)))
 // => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
@@ -104,7 +100,7 @@ Or if you wanted to sort on the object values in reverse order, you could write:
 ```js
 const stringify = require('json-stringify-deterministic')
 
-const obj = { d: 6, c: 5, b: [{z: 3, y: 2, x: 1}, 9], a: 10 }
+const obj = { d: 6, c: 5, b: [{ z: 3, y: 2, x: 1 }, 9], a: 10 }
 const objtSerializer = stringify(obj, function (a, b) {
   return a.value < b.value ? 1 : -1
 })
