@@ -21,22 +21,10 @@ $ npm install json-stringify-deterministic --save
 ## Usage
 
 ```js
-const stringify = require('json-stringify-deterministic')
+const stringify = require('./')
 const obj = { c: 8, b: [{ z: 6, y: 5, x: 4 }, 7], a: 3 }
 
 console.log(stringify(obj))
-// => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
-```
-
-**ProTip**: You can use it with [sort-keys-recursive](https://github.com/Kikobeats/sort-keys-recursive):
-
-```js
-const stringify = require('json-stringify-deterministic')
-const sortKeysRecursive = require('sort-keys-recursive')
-
-const obj = { c: 8, b: [{ z: 6, y: 5, x: 4 }, 7], a: 3 }
-
-console.log(stringify(sortKeysRecursive(obj)))
 // => {"a":3,"b":[{"x":4,"y":5,"z":6},7],"c":8}
 ```
 
@@ -144,6 +132,10 @@ Type: `function`<br>
 The replacer parameter is a function `opts.replacer(key, value)` that behaves
 the same as the replacer
 [from the core JSON object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_native_JSON#The_replacer_parameter).
+
+## Related
+
+- [sort-keys-recursive](https://github.com/Kikobeats/sort-keys-recursive): Sort the keys of an array/object recursively.
 
 ## License
 
