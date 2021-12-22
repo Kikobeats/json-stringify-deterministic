@@ -27,16 +27,16 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "mocha": "latest",
-    "should": "latest",
     "c8": "latest",
     "ci-publish": "latest",
     "conventional-github-releaser": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
+    "mocha": "latest",
     "nano-staged": "latest",
     "npm-check-updates": "latest",
     "prettier-standard": "latest",
+    "should": "latest",
     "simple-git-hooks": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
@@ -51,26 +51,20 @@
   ],
   "scripts": {
     "clean": "rm -rf node_modules",
+    "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard && standard-markdown",
-    "pretest": "npm run lint",
-    "test": "c8 mocha --require should",
-    "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
     "prerelease": "npm run update:check && npm run contributors",
+    "pretest": "npm run lint",
+    "release": "standard-version -a",
     "release:github": "conventional-github-releaser -p angular",
     "release:tags": "git push --follow-tags origin HEAD:master",
-    "release": "standard-version -a",
-    "update:check": "ncu -- --error-level 2",
-    "update": "ncu -u"
+    "test": "c8 mocha --require should",
+    "update": "ncu -u",
+    "update:check": "ncu -- --error-level 2"
   },
   "license": "MIT",
-  "standard": {
-    "globals": [
-      "describe",
-      "it"
-    ]
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -79,5 +73,11 @@
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",
     "pre-commit": "npx nano-staged"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
   }
 }
