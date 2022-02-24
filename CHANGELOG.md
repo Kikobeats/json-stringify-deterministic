@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.3 (2022-02-24)
+
+
+### Bug Fixes
+
+* add nano config ([4234c7f](https://github.com/kikobeats/json-stringify-deterministic/commit/4234c7f5c4072f17d47ceb15ad53fa7e6c4848a1))
+
 ### 1.0.2 (2021-12-22)
 
 <a name="1.0.1"></a>
