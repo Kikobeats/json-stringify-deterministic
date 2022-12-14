@@ -2,8 +2,9 @@
   "name": "json-stringify-deterministic",
   "description": "deterministic version of JSON.stringify() so you can get a consistent hash from stringified results.",
   "homepage": "https://github.com/Kikobeats/json-stringify-deterministic",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "lib",
+  "types": "./lib/index.d.ts",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
     "name": "Kiko Beats",
