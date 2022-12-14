@@ -4,6 +4,7 @@
   "homepage": "https://github.com/Kikobeats/json-stringify-deterministic",
   "version": "1.0.7",
   "main": "lib",
+  "types": "./lib/index.d.ts",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
     "name": "Kiko Beats",
