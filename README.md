@@ -11,11 +11,12 @@ Similar to [json-stable-stringify](https://github.com/substack/json-stable-strin
 - No Dependencies. Minimal as possible.
 - Better cycles detection.
 - Support serialization for object without `.toJSON` (such as `RegExp`).
+- Provides built-in TypeScript declarations.
 
 ## Install
 
 ```bash
-$ npm install json-stringify-deterministic --save
+npm install json-stringify-deterministic --save
 ```
 
 ## Usage
