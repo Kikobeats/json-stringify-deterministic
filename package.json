@@ -34,7 +34,6 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@ksmithut/prettier-standard": "latest",
     "c8": "latest",
     "ci-publish": "latest",
     "finepack": "latest",
@@ -61,7 +60,7 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard && standard-markdown",
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
-    "prerelease": "npm run update:check && npm run contributors",
+    "prerelease": "npm run contributors",
     "pretest": "npm run lint",
     "release": "standard-version -a",
     "release:github": "github-generate-release",
@@ -81,7 +80,6 @@
   },
   "nano-staged": {
     "*.js": [
-      "prettier-standard",
       "standard --fix"
     ],
     "*.md": [
