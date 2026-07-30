@@ -10,12 +10,7 @@
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
-  "contributors": [
-    {
-      "name": "Junxiao Shi",
-      "email": "sunnylandh@gmail.com"
-    }
-  ],
+  "contributors": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kikobeats/json-stringify-deterministic.git"
