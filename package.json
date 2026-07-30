@@ -1,6 +1,6 @@
 {
   "name": "json-stringify-deterministic",
-  "description": "deterministic version of JSON.stringify() so you can get a consistent hash from stringified results.",
+  "description": "Deterministic JSON.stringify with sorted keys for consistent hashes and stable cache keys.",
   "homepage": "https://github.com/Kikobeats/json-stringify-deterministic",
   "version": "1.0.14",
   "types": "./lib/index.d.ts",
@@ -24,9 +24,13 @@
     "url": "https://github.com/Kikobeats/json-stringify-deterministic/issues"
   },
   "keywords": [
+    "canonical",
     "deterministic",
+    "digest",
     "hash",
     "json",
+    "keys",
+    "serialize",
     "sort",
     "stable",
     "stringify"
@@ -80,6 +84,7 @@
   },
   "nano-staged": {
     "*.js": [
+      "npx @kikobeats/prettier-standard",
       "standard --fix"
     ],
     "*.md": [
