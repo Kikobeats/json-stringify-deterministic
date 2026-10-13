@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.18 (2026-10-13)
+
+
+### Bug Fixes
+
+* pass array indices to the replacer as strings ([#32](https://github.com/kikobeats/json-stringify-deterministic/issues/32)) ([7557891](https://github.com/kikobeats/json-stringify-deterministic/commit/7557891989fd2709e6112a4eaf2f1062fa1ff9d6)), closes [#31](https://github.com/kikobeats/json-stringify-deterministic/issues/31)
+
 ### 1.0.17 (2026-10-13)
 
 ### 1.0.16 (2026-08-03)
