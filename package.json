@@ -2,7 +2,7 @@
   "name": "json-stringify-deterministic",
   "description": "Deterministic JSON.stringify with sorted keys for consistent hashes and stable cache keys.",
   "homepage": "https://github.com/Kikobeats/json-stringify-deterministic",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "types": "./lib/index.d.ts",
   "main": "lib",
   "author": {
