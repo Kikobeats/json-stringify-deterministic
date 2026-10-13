@@ -1,8 +1,8 @@
 # json-stringify-deterministic
 
-![Last version](https://img.shields.io/github/tag/Kikobeats/json-stringify-deterministic.svg?style=flat-square)
-[![Coverage Status](https://img.shields.io/coveralls/Kikobeats/json-stringify-deterministic.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/json-stringify-deterministic)
-[![NPM Status](https://img.shields.io/npm/dm/json-stringify-deterministic.svg?style=flat-square)](https://www.npmjs.org/package/json-stringify-deterministic)
+[![Last version](https://img.shields.io/github/v/tag/Kikobeats/json-stringify-deterministic?style=flat-square)](https://github.com/Kikobeats/json-stringify-deterministic/releases)
+[![Coverage Status](https://img.shields.io/coverallsCoverage/github/Kikobeats/json-stringify-deterministic?style=flat-square)](https://coveralls.io/github/Kikobeats/json-stringify-deterministic)
+[![NPM Status](https://img.shields.io/npm/dm/json-stringify-deterministic?style=flat-square)](https://www.npmjs.com/package/json-stringify-deterministic)
 
 > Deterministic version of `JSON.stringify()`, so you can get a consistent hash from stringified results.
 
