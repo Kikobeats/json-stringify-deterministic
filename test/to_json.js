@@ -47,6 +47,23 @@ describe('toJSON', function () {
     stringify(value).should.be.equal(JSON.stringify(value))
   })
 
+  it('reads a toJSON getter once and calls it with this set', function () {
+    let reads = 0
+    const value = {
+      name: 'n',
+      get toJSON () {
+        reads += 1
+        return function (key) {
+          return this.name + ':' + key
+        }
+      }
+    }
+
+    // cycles:true skips the JSON.stringify cycle probe, which reads toJSON on its own.
+    stringify({ b: value }, { cycles: true }).should.be.equal('{"b":"n:b"}')
+    reads.should.be.equal(1)
+  })
+
   describe('non-function toJSON is serialized as a regular field', function () {
     const values = ['label', 42, true, null, { nested: 1 }, ['x']]
 
