@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.19 (2026-11-17)
+
+
+### Bug Fixes
+
+* only call toJSON when it is a function ([#34](https://github.com/kikobeats/json-stringify-deterministic/issues/34)) ([f031651](https://github.com/kikobeats/json-stringify-deterministic/commit/f0316516c5533aa3c00b8f2de44e396f16d3f6e4)), closes [#33](https://github.com/kikobeats/json-stringify-deterministic/issues/33)
+
 ### 1.0.18 (2026-10-13)
 
 
