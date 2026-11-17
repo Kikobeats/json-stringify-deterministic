@@ -64,6 +64,15 @@ describe('toJSON', function () {
     reads.should.be.equal(1)
   })
 
+  it('calls toJSON when its call property is null', function () {
+    const toJSON = function (key) {
+      return this.name + ':' + key
+    }
+    toJSON.call = null
+    const value = { name: 'n', toJSON }
+    stringify({ b: value }).should.be.equal('{"b":"n:b"}')
+  })
+
   describe('non-function toJSON is serialized as a regular field', function () {
     const values = ['label', 42, true, null, { nested: 1 }, ['x']]
 
